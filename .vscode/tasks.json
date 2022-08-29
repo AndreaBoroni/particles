@@ -1,0 +1,68 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "g++.exe build debug",
+            "command": "g++.exe",
+            "args": [
+                "-g",
+                "main.cpp",
+                "-o",
+                "main.exe",
+                "stb_image.h",
+                "-static-libgcc",
+                "-static-libstdc++",
+                "-static",
+                "-lgdi32",
+                "-lComdlg32",
+                "-w",
+                "-march=native",
+            ],
+            "problemMatcher": [ "$gcc" ],
+            "group": { 
+                "kind": "build",
+                "isDefault": true,
+            }
+        },
+        {
+            "type": "shell",
+            "label": "g++.exe build release",
+            "command": "g++.exe",
+            "args": [
+                "-O2",
+                "main.cpp",
+                "-o",
+                "particles.exe",
+                "stb_image.h",
+                "-static-libgcc",
+                "-static-libstdc++",
+                "-static",
+                "-lgdi32",
+                "-lComdlg32",
+                "-w",
+                "-march=native",
+            ],
+            "problemMatcher": [ "$gcc" ],
+        },
+        {
+            "type": "shell",
+            "label": "g++.exe build disassembly",
+            "command": "g++.exe",
+            "args": [
+                "-g",
+                "-o",
+                "main.S",
+                "-S",
+                "main.cpp",
+                "-static-libgcc",
+                "-static-libstdc++",
+                "-static",
+                "-lgdi32",
+                "-lComdlg32",
+                "-w",
+            ],
+            "problemMatcher": [ "$gcc" ],
+        },
+    ]
+}
